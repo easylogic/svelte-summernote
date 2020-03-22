@@ -1,6 +1,6 @@
 {
   "name": "@easylogic/svelte-summernote",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@easylogic/jquery-globals": "^1.0.0",

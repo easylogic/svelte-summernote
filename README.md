@@ -26,6 +26,24 @@ export default EditorComponent
 ```
 
 
+# Support Internalization
+
+```js
+import 'jquery'
+import '@easylogic/jquery-globals'
+import SvelteSummernoteLite from '@easylogic/svelte-summernote'
+import '@easylogic/svelte-summernote/index.css'
+import '@easylogic/svelte-summernote/dist/lang/summernote-ko-KR'
+
+const EditorComponent = () => {
+  return <SvelteSummernoteLite id="sample" lang='ko-KR' />
+}
+
+export default EditorComponent
+```
+
+
+
 
 
 
