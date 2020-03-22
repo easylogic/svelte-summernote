@@ -1,13 +1,24 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "@easylogic/svelte-summernote",
+  "version": "0.0.1",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@easylogic/jquery-globals": "^1.0.0",
+    "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-info": "^5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/svelte": "^5.3.17",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.4.1",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.4.1",
     "mini-css-extract-plugin": "^0.6.0",
+    "popper.js": "^1.16.1",
     "serve": "^11.0.0",
     "style-loader": "^0.23.1",
     "summernote": "^0.8.16",
@@ -15,10 +26,20 @@
     "svelte-loader": "2.13.3",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server --content-base public"
+    "dev:lite": "webpack-dev-server --config ./config/lite/webpack.dev.config.js --progress",
+    "dev:bs4": "webpack-dev-server --config ./config/bs4/webpack.dev.config.js --progress",
+    "dev": "npm run dev:lite",
+    "build:lite": "webpack --config ./config/lite/webpack.prod.config.js --progress",
+    "build:bs4": "webpack --config ./config/bs4/webpack.prod.config.js --progress",
+    "build": "npm run build:lite && npm run build:bs4",
+    "build:index:lite": "webpack --config ./config/lite/webpack.prod.index.config.js --progress",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook -o .out"
   }
 }

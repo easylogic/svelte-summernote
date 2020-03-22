@@ -7,10 +7,51 @@ export let value;
 
 onMount(() => {
 
-    const {id, value, ...props} = $$props
+    const {id, value, opt =  {}, ...props} = $$props
+    const {
+        initInvoke,
+        onInit,
+        onBlur,
+        onBlurCodeview,
+        onChange,
+        onEnter,
+        onFocus,
+        onImageUpload,
+        onKeydown,
+        onKeyup,
+        onMousedown,
+        onMouseup,
+        onPaste,        
+        ...initProps
+    } = props;    
+
+
+    const callbacks = {
+        onInit: (context) => {
+            if (onInit) onInit(context);
+            if (initInvoke) {
+                initInvoke((...args) => {
+                    return context.note.summernote(...args);
+                })
+            }
+        },
+        onBlur,
+        onBlurCodeview,
+        onChange,
+        onEnter,
+        onFocus,
+        onImageUpload,
+        onKeydown,
+        onKeyup,
+        onMousedown,
+        onMouseup,
+        onPaste,              
+    }    
+
+    const dialogsInBody = typeof props.dialogsInBody === 'undefined' ? true : props.dialogsInBody;
 
     jQuery(`#${id}`).summernote({
-        ...props
+        ...initProps, callbacks, ...opt, dialogsInBody
     });
 })
 
