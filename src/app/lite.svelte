@@ -4,4 +4,4 @@
 	import 'summernote/dist/lang/summernote-ko-KR';
 </script>
 
-<SvelteSummernoteLite id="sample" lang="ko-KR" value="yellow panel." height="300" />
+<SvelteSummernoteLite id="sample" lang="ko-KR" placeholder="Welcome to Svelte Summernote!!" height="300" />
