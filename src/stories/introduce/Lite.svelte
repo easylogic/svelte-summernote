@@ -12,14 +12,14 @@ import SvelteSummernoteLite from '../../summernote/SvelteSummernoteLite'
 
 
 
-<pre>
+<pre>{`
 
   import SvelteSummernoteLite from '@easylogic/svelte-summernote';
   import '@easylogic/svelte-summernote/summernote-lite.css';
 
-  &lt;SvelteSummernoteLite id="lite" />
+  <SvelteSummernoteLite id="lite" />
 
-</pre>
+`}</pre>
 
     <SvelteSummernoteLite id="sample" />
 
