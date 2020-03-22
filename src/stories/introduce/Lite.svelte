@@ -15,7 +15,7 @@ import SvelteSummernoteLite from '../../summernote/SvelteSummernoteLite'
 <pre>{`
 
   import SvelteSummernoteLite from '@easylogic/svelte-summernote';
-  import '@easylogic/svelte-summernote/summernote-lite.css';
+  import '@easylogic/svelte-summernote/index.css';
 
   <SvelteSummernoteLite id="lite" />
 
