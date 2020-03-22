@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
   entry: {
-    'index': './src/summernote/lite.js'
+    'index': './src/app/lite.js'
   },    
   output: {
     path: path.resolve(__dirname, '../../.out'),
